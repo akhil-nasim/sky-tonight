@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sky Tonight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+
+  <header class="top">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><ellipse cx="12" cy="12" rx="10.5" ry="3.2" fill="none" stroke="currentColor" stroke-width="1.4" transform="rotate(-20 12 12)"/></svg>
+      <h1>Sky Tonight</h1>
+    </div>
+    <div class="loc">
+      <button id="geoBtn" class="btn">Use my location</button>
+      <form id="searchForm" class="search" autocomplete="off">
+        <input id="searchInput" type="search" placeholder="Search a city…" aria-label="Search a city">
+        <ul id="searchResults" class="results" hidden></ul>
+      </form>
+      <button id="redBtn" class="btn ghost" title="Red night-vision mode keeps your eyes dark-adapted">Red mode</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="welcome" class="welcome">
+      <h2>What's up there tonight?</h2>
+      <p>Share your location or search for a city to see which planets are up, the Moon's phase, and when the International Space Station passes overhead.</p>
+    </section>
+
+    <div id="dash" hidden>
+      <section class="summary">
+        <div>
+          <p class="eyebrow" id="placeName"></p>
+          <h2 id="dateLine"></h2>
+        </div>
+        <dl class="times" id="sunTimes"></dl>
+      </section>
+      <p id="status" class="status" role="status"></p>
+
+      <div class="grid-top">
+        <section class="card moon" id="moonCard"></section>
+        <section class="card chart">
+          <div class="card-head">
+            <h3>Sky map</h3>
+            <span class="muted small">Hold it overhead with N at the top</span>
+          </div>
+          <div id="skyChart" class="sky-chart"></div>
+          <label class="slider">
+            <span id="chartTime"></span>
+            <input id="timeSlider" type="range" min="0" max="0" value="0" aria-label="Time of night">
+          </label>
+        </section>
+      </div>
+
+      <section>
+        <div class="section-head">
+          <h2>Planets</h2>
+          <span class="muted small" id="planetSource"></span>
+        </div>
+        <div id="planets" class="planets"></div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>International Space Station</h2>
+          <span class="muted small" id="issNow"></span>
+        </div>
+        <div class="card iss">
+          <p class="why"><strong>Why this matters.</strong> <span id="issWhy"></span></p>
+          <div id="issPasses"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    Planet positions from the <a href="https://api.visibleplanets.dev">Visible Planets API</a>.
+    ISS orbit data from the <a href="https://tle.ivanstanojevic.me">TLE API</a> (CelesTrak), with passes computed by satellite.js.
+    Moon phase and sun times from Astronomy Engine. City search by Open-Meteo.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/satellite.js@5.0.0/dist/satellite.min.js"></script>
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
