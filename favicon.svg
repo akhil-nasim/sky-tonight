@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="sky" cx="50%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#1b2556"/>
+      <stop offset="1" stop-color="#070b18"/>
+    </radialGradient>
+    <radialGradient id="planet" cx="38%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#fff3cf"/>
+      <stop offset="0.5" stop-color="#ffd27a"/>
+      <stop offset="1" stop-color="#b8862f"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#sky)"/>
+  <circle cx="12" cy="14" r="1.4" fill="#dfe6ff"/>
+  <circle cx="51" cy="11" r="1" fill="#dfe6ff"/>
+  <circle cx="54" cy="50" r="1.2" fill="#ffe9c4"/>
+  <circle cx="9" cy="47" r="0.9" fill="#dfe6ff"/>
+  <path d="M10 39 A23 7 -20 0 1 54 25" fill="none" stroke="#8fb4ff" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="13" fill="url(#planet)"/>
+  <path d="M54 25 A23 7 -20 0 1 10 39" fill="none" stroke="#8fb4ff" stroke-width="3" stroke-linecap="round"/>
+</svg>

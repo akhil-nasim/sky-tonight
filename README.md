@@ -4,6 +4,8 @@ A single-page dashboard that shows what's in the night sky from your location: w
 
 No build step, no API keys, no backend. It's plain HTML, CSS and JavaScript.
 
+Built by **Akhil Nasim**: [akhilnasim.com](https://akhilnasim.com)
+
 ## Features
 
 - **Location**: use your device's location, or search for any city. Times are shown in that place's time zone, and the last location is remembered.
@@ -26,6 +28,16 @@ Then open <http://localhost:8080>.
 
 The geolocation button needs a secure context: `localhost` or HTTPS. If you deploy the site, use HTTPS hosting such as GitHub Pages or Netlify.
 
+## Deploying and SEO
+
+The page includes a meta description, canonical URL, Open Graph and Twitter card tags, `WebApplication` structured data (JSON-LD), a web app manifest, `robots.txt` and `sitemap.xml`.
+
+These all point to **`https://skytonight.akhilnasim.com/`**. Deploy the files to the root of that subdomain so `robots.txt`, `sitemap.xml` and the icons are served from `/`. If the address ever changes, find and replace it in `index.html`, `robots.txt` and `sitemap.xml`.
+
+In Google Search Console, add `skytonight.akhilnasim.com` as its own property (or verify the whole `akhilnasim.com` domain), since subdomains are treated as separate sites.
+
+After deploying, submit the sitemap in Google Search Console and check the share preview with a tool like [opengraph.xyz](https://www.opengraph.xyz).
+
 ## Data sources
 
 | What | Source | Notes |
@@ -47,6 +59,10 @@ If the Visible Planets API can't be reached, positions are computed on-device wi
 
 ```
 index.html    Page layout
+favicon.svg   Site icon (source for the PNG/ICO icons)
+favicon.ico, favicon-32.png, apple-touch-icon.png, icon-192.png, icon-512.png
+og-image.png  1200×630 social share image
+site.webmanifest, robots.txt, sitemap.xml
 styles.css    Styling (dark night-sky theme, red mode)
 app.js        Data fetching, astronomy calculations and rendering
 content.js    "Why this matters" text and Moon-phase viewing tips

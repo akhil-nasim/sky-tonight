@@ -146,5 +146,13 @@ main section { margin-top: 28px; }
 
 footer { max-width: 1180px; margin: 0 auto; padding: 24px 16px 40px; color: var(--dim); font-size: 0.8rem; }
 footer a { color: var(--muted); }
+footer .credit { margin: 0 0 8px; color: var(--muted); font-size: 0.88rem; }
+footer .credit a { color: var(--accent); text-decoration: none; }
+footer .credit a:hover { text-decoration: underline; }
+
+.about { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--card-border); }
+.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 14px; }
+.about h3 { font-size: 1rem; color: var(--accent); }
+.about p { margin: 6px 0 0; color: var(--muted); font-size: 0.9rem; }
 
 .skeleton { color: var(--muted); padding: 20px 0; }

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skytonight.akhilnasim.com/sitemap.xml

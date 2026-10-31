@@ -3,7 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sky Tonight</title>
+  <title>Sky Tonight – What's Visible in the Night Sky From Your Location</title>
+  <meta name="description" content="See what's in tonight's sky from where you are: visible planets, the Moon's phase, moonrise and moonset, and ISS passes overhead. Free, no sign-up.">
+  <meta name="keywords" content="night sky tonight, visible planets tonight, moon phase today, ISS pass times, International Space Station tracker, stargazing, astronomy, sky map">
+  <meta name="author" content="Akhil Nasim">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#070b18">
+  <link rel="canonical" href="https://skytonight.akhilnasim.com/">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sky Tonight">
+  <meta property="og:title" content="Sky Tonight – What's Visible in the Night Sky From Your Location">
+  <meta property="og:description" content="Planets, Moon phase and ISS passes for tonight, with a short note on why each one matters.">
+  <meta property="og:url" content="https://skytonight.akhilnasim.com/">
+  <meta property="og:image" content="https://skytonight.akhilnasim.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sky Tonight dashboard: planets, Moon phase and ISS passes">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sky Tonight – What's Visible in the Night Sky From Your Location">
+  <meta name="twitter:description" content="Planets, Moon phase and ISS passes for tonight, with a short note on why each one matters.">
+  <meta name="twitter:image" content="https://skytonight.akhilnasim.com/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Sky Tonight",
+    "url": "https://skytonight.akhilnasim.com/",
+    "description": "See which planets are visible tonight, the Moon's phase and rise/set times, and upcoming International Space Station passes for any location.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any (web browser)",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "image": "https://skytonight.akhilnasim.com/og-image.png",
+    "author": { "@type": "Person", "name": "Akhil Nasim", "url": "https://akhilnasim.com" },
+    "creator": { "@type": "Person", "name": "Akhil Nasim", "url": "https://akhilnasim.com" }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -31,6 +77,7 @@
     <section id="welcome" class="welcome">
       <h2>What's up there tonight?</h2>
       <p>Share your location or search for a city to see which planets are up, the Moon's phase, and when the International Space Station passes overhead.</p>
+      <noscript><p>Sky Tonight needs JavaScript to work out what's in your sky. Please enable it and reload the page.</p></noscript>
     </section>
 
     <div id="dash" hidden>
@@ -77,9 +124,28 @@
         </div>
       </section>
     </div>
+
+    <section class="about" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle">About Sky Tonight</h2>
+      <div class="about-grid">
+        <div>
+          <h3>Planets visible tonight</h3>
+          <p>Find out which of Mercury, Venus, Mars, Jupiter, Saturn, Uranus and Neptune are above the horizon after dark, when each is highest, which direction to face, and how bright it will look.</p>
+        </div>
+        <div>
+          <h3>Moon phase today</h3>
+          <p>See the current phase and how much of the Moon is lit, plus moonrise and moonset times, the next full and new moon, and what the phase means for stargazing.</p>
+        </div>
+        <div>
+          <h3>ISS pass times</h3>
+          <p>Get the International Space Station's visible passes over your location for the next three days: where it appears, how high it climbs and how long it stays in view.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
+    <p class="credit">Built by <a href="https://akhilnasim.com">Akhil Nasim</a> · <a href="https://akhilnasim.com">akhilnasim.com</a></p>
     Planet positions from the <a href="https://api.visibleplanets.dev">Visible Planets API</a>.
     ISS orbit data from the <a href="https://tle.ivanstanojevic.me">TLE API</a> (CelesTrak), with passes computed by satellite.js.
     Moon phase and sun times from Astronomy Engine. City search by Open-Meteo.
